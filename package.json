@@ -1,0 +1,72 @@
+{
+  "name": "prj1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:crud": "playwright test tests/crud-operations.spec.ts",
+    "test:performance": "playwright test tests/performance.spec.ts",
+    "test:database": "playwright test tests/database.spec.ts",
+    "test:docker": "playwright test tests/docker.spec.ts",
+    "test:all": "playwright test --reporter=html",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "docker:build": "docker build -t cbwapp .",
+    "docker:run": "docker-compose up -d",
+    "docker:stop": "docker-compose down",
+    "metrics": "curl http://localhost:3000/api/metrics"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.45",
+    "mysql2": "^3.11.4",
+    "next": "15.5.0",
+    "pg-hstore": "^2.3.4",
+    "prisma": "^5.22.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "sequelize": "^6.37.5",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.49.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/js-cookie": "^3.0.6",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/validator": "^13.12.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "prisma",
+    "sequelize",
+    "docker",
+    "git",
+    "cbw",
+    "assignment2"
+  ],
+  "author": "Vinit Kumar (21946017)",
+  "description": "Cloud Based Web Applications - Assignment 2: Enhanced Git Command Executor with CRUD operations, Docker support, and comprehensive testing"
+}
