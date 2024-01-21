@@ -1,0 +1,29 @@
+.light {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #0070f3;
+  --code-bg: #f0f0f0;
+  --code-text: #333333;
+  --input-bg: #ffffff;
+  --input-border: #e1e5e9;
+}
+.dark {
+  --bg: #1a1a1a;
+  --text: #ffffff;
+  --accent: #0ea5e9;
+  --code-bg: #2d2d2d;
+  --code-text: #e0e0e0;
+  --input-bg: #333333;
+  --input-border: #555555;
+}
+html {
+  background-color: var(--bg);
+  color: var(--text);
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
