@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  database:
+    image: mysql:8.0
+    container_name: cbwapp-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cbwapp
+      MYSQL_USER: cbwapp_user
+      MYSQL_PASSWORD: cbwapp_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - cbwapp-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.enhanced
+    container_name: cbwapp-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=mysql://cbwapp_user:cbwapp_password@database:3306/cbwapp
+    depends_on:
+      - database
+    networks:
+      - cbwapp-network
+
+volumes:
+  mysql_data:
+
+networks:
+  cbwapp-network:
+    driver: bridge
