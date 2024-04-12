@@ -1,0 +1,42 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - link "BackyardBud Logo BackyardBud Albury Planning Assessment" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img "BackyardBud Logo" [ref=e10]
+        - generic [ref=e11]:
+          - heading "BackyardBud" [level=1] [ref=e12]
+          - paragraph [ref=e13]: Albury Planning Assessment
+      - navigation [ref=e14]:
+        - link "Home" [ref=e15] [cursor=pointer]:
+          - /url: /
+        - link "Assessment" [ref=e16] [cursor=pointer]:
+          - /url: /assessment
+        - link "About" [ref=e17] [cursor=pointer]:
+          - /url: /about
+  - main [ref=e18]
+  - contentinfo [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - heading "Backyard Buds" [level=3] [ref=e23]
+          - paragraph [ref=e24]: Your friendly guide to help Albury residents determine if their shed or patio proposal qualifies as exempt development under NSW SEPP.
+        - generic [ref=e25]:
+          - heading "Important Notice" [level=3] [ref=e26]
+          - paragraph [ref=e27]: This is a prototype tool for educational purposes. Always consult with qualified professionals and relevant authorities for official planning advice.
+        - generic [ref=e28]:
+          - heading "Resources" [level=3] [ref=e29]
+          - list [ref=e30]:
+            - listitem [ref=e31]:
+              - link "NSW SEPP (Exempt & Complying Development Codes) 2008" [ref=e32] [cursor=pointer]:
+                - /url: https://legislation.nsw.gov.au/view/html/inforce/current/epi-2008-0572
+            - listitem [ref=e33]:
+              - link "Albury City Council" [ref=e34] [cursor=pointer]:
+                - /url: https://www.alburycity.nsw.gov.au/
+      - paragraph [ref=e36]: © 2024 Backyard Buds. Your friendly planning assessment companion.
+  - button [ref=e37] [cursor=pointer]:
+    - img [ref=e38]
+```
