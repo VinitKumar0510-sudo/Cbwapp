@@ -1,0 +1,21 @@
+.light {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #0070f3;
+}
+.dark {
+  --bg: #1a1a1a;
+  --text: #ffffff;
+  --accent: #0ea5e9;
+}
+html {
+  background-color: var(--bg);
+  color: var(--text);
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+// components/Footer.tsx
+"use client";
+import { useTheme } from "@/context/ThemeContext";
+
+export default function Footer() {
+  const { theme } = useTheme();
+  const date = new Date().toLocaleDateString();
+
+  return (
+    <footer style={{ padding: "1rem", textAlign: "center", background: theme === "light" ? "#f0f0f0" : "#333", color: theme === "light" ? "#000" : "#fff" }}>
+      <p>&copy; {new Date().getFullYear()} Aaditya YourLastName | Student Number: 21946017 | Date: {date}</p>
+    </footer>
+  );
+}
