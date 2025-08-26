@@ -4,9 +4,9 @@ import GitHubForm from "@/components/GitHubForm";
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
-      <main style={{ padding: "2rem" }}>
+      <main style={{ padding: "2rem", flex: 1 }}>
         <h1>GitHub Command Executor</h1>
         <GitHubForm />
       </main>

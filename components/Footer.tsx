@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer style={{ padding: "1rem", textAlign: "center", background: theme === "light" ? "#f0f0f0" : "#333", color: theme === "light" ? "#000" : "#fff" }}>
-      <p>&copy; {new Date().getFullYear()} Aaditya YourLastName | Student Number: 21946017 | Date: {date}</p>
+      <p>&copy; {new Date().getFullYear()} Vinit Kumar | Student Number: 21946017 | Date: {date}</p>
     </footer>
   );
 }
