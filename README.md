@@ -1,4 +1,4 @@
-# Student Portfolio - Next.js App
+# Cloud Based Web Applications - Assignment 1
 
 **Student Number:** 21946017
 
@@ -34,8 +34,8 @@ A modern Next.js application showcasing web development skills with GitHub integ
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/prj1.git
-cd prj1
+git clone https://github.com/VinitKumar0510-sudo/Cbwapp
+cd Cbwapp
 ```
 
 2. Install dependencies:
@@ -101,7 +101,7 @@ This project is for educational purposes as part of coursework.
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 ## Update History
-
+## Testing updates
 Updated by VinitKumar0510-sudo on 2025-08-27T00:14:05.876Z
 
 Updated by Cosmoshooda1010 on 2025-08-27T00:33:34.397Z
@@ -112,6 +112,6 @@ Updated by Vinit kumar 21946017 on 2025-08-27T00:58:35.529Z
 
 ---
 
-**Student:** 21946017  
+**Student:** 21946017 Vinit Kumar  
 **Course:** Web Development  
 **Year:** 2025
