@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1rem", background: theme === "light" ? "#f0f0f0" : "#333", color: theme === "light" ? "#000" : "#fff" }}>
-      <div style={{ fontWeight: "bold" }}>Student Number: 21946017</div>
+      <div style={{ fontWeight: "bold", fontSize: "0.9rem", padding: "0.5rem 1rem", backgroundColor: theme === "light" ? "#e3f2fd" : "#1e3a8a", borderRadius: "20px", border: `2px solid ${theme === "light" ? "#2196f3" : "#3b82f6"}` }}>Student: 21946017</div>
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
         <nav style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <Link href="/" onClick={() => setActiveTab("/")} style={{ padding: "0.5rem 1rem", background: activeTab === "/" ? "#0070f3" : "transparent", color: activeTab === "/" ? "#fff" : "inherit", borderRadius: "4px", textDecoration: "none" }}>Home</Link>
