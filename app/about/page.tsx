@@ -24,6 +24,8 @@ export default function About() {
           width={600} 
           height={400}
           title="Tutorial on using the GitHub Command Executor"
+          isExternal={true}
+          embedId="1cKCRyp2Py5rFL3BTM2itlQUr87xTNJYR"
         />
       </main>
       <Footer />

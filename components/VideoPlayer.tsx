@@ -6,9 +6,11 @@ interface VideoPlayerProps {
   width?: number;
   height?: number;
   title?: string;
+  isExternal?: boolean;
+  embedId?: string;
 }
 
-export default function VideoPlayer({ src, width = 600, height = 400, title = "Tutorial Video" }: VideoPlayerProps) {
+export default function VideoPlayer({ src, width = 600, height = 400, title = "Tutorial Video", isExternal = false, embedId }: VideoPlayerProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
@@ -18,6 +20,23 @@ export default function VideoPlayer({ src, width = 600, height = 400, title = "T
     setIsLoading(false);
     setHasError(true);
   };
+
+  // Handle Google Drive embed
+  if (isExternal && embedId) {
+    const driveEmbedUrl = `https://drive.google.com/file/d/${embedId}/preview`;
+    return (
+      <div style={{ position: "relative", width: `${width}px`, maxWidth: "100%" }}>
+        <iframe
+          src={driveEmbedUrl}
+          width={width}
+          height={height}
+          allow="autoplay"
+          style={{ borderRadius: "8px", border: "none" }}
+          title={title}
+        />
+      </div>
+    );
+  }
 
   return (
     <div style={{ position: "relative", width: `${width}px`, maxWidth: "100%" }}>
