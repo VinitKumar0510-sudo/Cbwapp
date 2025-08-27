@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export default function About() {
   return (
@@ -18,10 +19,12 @@ export default function About() {
           <h2>Project Description</h2>
           <p>This Next.js application automates GitHub commands for team projects, allowing users to execute Git operations through a web interface.</p>
         </div>
-        <video controls width="600" aria-label="Tutorial video for using the app">
-          <source src="/tutorial.mp4" type="video/mp4" />
-          Tutorial on using the GitHub Command Executor.
-        </video>
+        <VideoPlayer 
+          src="/tutorial.mp4" 
+          width={600} 
+          height={400}
+          title="Tutorial on using the GitHub Command Executor"
+        />
       </main>
       <Footer />
     </div>

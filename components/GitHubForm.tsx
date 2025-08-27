@@ -105,7 +105,7 @@ export default function GitHubForm() {
           style={{ padding: "0.75rem 2rem", marginTop: "1rem", background: loading ? "#ccc" : "#0070f3", color: "#fff", border: "none", borderRadius: "8px", fontSize: "1rem", fontWeight: "600", cursor: loading ? "not-allowed" : "pointer", transition: "background-color 0.2s" }}
           aria-label="Execute GitHub command"
         >
-          {loading ? "Executing..." : "Execute"}
+          {loading ? "Executing Git Commands..." : "Execute Git Commands"}
         </button>
       </form>
       {output && (

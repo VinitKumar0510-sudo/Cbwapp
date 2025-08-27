@@ -1,17 +1,20 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Cookies from "js-cookie";
 import { useTheme } from "@/context/ThemeContext";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(Cookies.get("activeTab") || "/");
+  const [activeTab, setActiveTab] = useState(pathname || "/");
 
   useEffect(() => {
-    Cookies.set("activeTab", activeTab, { expires: 7 });
-  }, [activeTab]);
+    setActiveTab(pathname);
+    Cookies.set("activeTab", pathname, { expires: 7 });
+  }, [pathname]);
 
   return (
     <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1rem", background: theme === "light" ? "#f0f0f0" : "#333", color: theme === "light" ? "#000" : "#fff" }}>
@@ -32,31 +35,34 @@ export default function Header() {
         >
           ☰
         </button>
-        <div
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-          style={{
-            width: "60px",
-            height: "30px",
-            backgroundColor: theme === "light" ? "#ccc" : "#0070f3",
-            borderRadius: "15px",
-            position: "relative",
-            cursor: "pointer",
-            transition: "background-color 0.3s"
-          }}
-        >
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <span style={{ fontSize: "0.9rem", fontWeight: "500" }}>Dark Mode:</span>
           <div
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
             style={{
-              width: "26px",
-              height: "26px",
-              backgroundColor: "white",
-              borderRadius: "50%",
-              position: "absolute",
-              top: "2px",
-              left: theme === "light" ? "2px" : "32px",
-              transition: "left 0.3s"
+              width: "60px",
+              height: "30px",
+              backgroundColor: theme === "light" ? "#ccc" : "#0070f3",
+              borderRadius: "15px",
+              position: "relative",
+              cursor: "pointer",
+              transition: "background-color 0.3s"
             }}
-          />
+          >
+            <div
+              style={{
+                width: "26px",
+                height: "26px",
+                backgroundColor: "white",
+                borderRadius: "50%",
+                position: "absolute",
+                top: "2px",
+                left: theme === "light" ? "2px" : "32px",
+                transition: "left 0.3s"
+              }}
+            />
+          </div>
         </div>
         {isMenuOpen && (
           <ul style={{ position: "absolute", top: "60px", right: "10px", background: theme === "light" ? "#fff" : "#444", border: "none", borderRadius: "8px", padding: "0.5rem", listStyle: "none", boxShadow: "0 4px 12px rgba(0,0,0,0.15)", minWidth: "150px", zIndex: 1000 }}>
