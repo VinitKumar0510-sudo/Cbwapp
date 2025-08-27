@@ -36,8 +36,8 @@ export default function GitHubForm() {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Failed to update README");
       setOutput(`${output}\nSuccess: README updated! Commit SHA: ${data.commit.sha}`);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An unknown error occurred');
     } finally {
       setLoading(false);
     }
@@ -53,9 +53,9 @@ export default function GitHubForm() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
-            style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem", border: "2px solid #e1e5e9", borderRadius: "8px", fontSize: "1rem", transition: "border-color 0.2s", outline: "none" }}
-            onFocus={(e) => e.target.style.borderColor = "#0070f3"}
-            onBlur={(e) => e.target.style.borderColor = "#e1e5e9"}
+            style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem", border: "2px solid var(--input-border)", borderRadius: "8px", fontSize: "1rem", transition: "border-color 0.2s", outline: "none", backgroundColor: "var(--input-bg)", color: "var(--text)" }}
+            onFocus={(e) => e.target.style.borderColor = "var(--accent)"}
+            onBlur={(e) => e.target.style.borderColor = "var(--input-border)"}
             aria-required="true"
           />
         </label>
@@ -66,9 +66,9 @@ export default function GitHubForm() {
             value={token}
             onChange={(e) => setToken(e.target.value)}
             required
-            style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem", border: "2px solid #e1e5e9", borderRadius: "8px", fontSize: "1rem", transition: "border-color 0.2s", outline: "none" }}
-            onFocus={(e) => e.target.style.borderColor = "#0070f3"}
-            onBlur={(e) => e.target.style.borderColor = "#e1e5e9"}
+            style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem", border: "2px solid var(--input-border)", borderRadius: "8px", fontSize: "1rem", transition: "border-color 0.2s", outline: "none", backgroundColor: "var(--input-bg)", color: "var(--text)" }}
+            onFocus={(e) => e.target.style.borderColor = "var(--accent)"}
+            onBlur={(e) => e.target.style.borderColor = "var(--input-border)"}
             aria-required="true"
           />
         </label>
@@ -79,9 +79,9 @@ export default function GitHubForm() {
             value={owner}
             onChange={(e) => setOwner(e.target.value)}
             required
-            style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem", border: "2px solid #e1e5e9", borderRadius: "8px", fontSize: "1rem", transition: "border-color 0.2s", outline: "none" }}
-            onFocus={(e) => e.target.style.borderColor = "#0070f3"}
-            onBlur={(e) => e.target.style.borderColor = "#e1e5e9"}
+            style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem", border: "2px solid var(--input-border)", borderRadius: "8px", fontSize: "1rem", transition: "border-color 0.2s", outline: "none", backgroundColor: "var(--input-bg)", color: "var(--text)" }}
+            onFocus={(e) => e.target.style.borderColor = "var(--accent)"}
+            onBlur={(e) => e.target.style.borderColor = "var(--input-border)"}
             aria-required="true"
           />
         </label>
@@ -92,9 +92,9 @@ export default function GitHubForm() {
             value={repo}
             onChange={(e) => setRepo(e.target.value)}
             required
-            style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem", border: "2px solid #e1e5e9", borderRadius: "8px", fontSize: "1rem", transition: "border-color 0.2s", outline: "none" }}
-            onFocus={(e) => e.target.style.borderColor = "#0070f3"}
-            onBlur={(e) => e.target.style.borderColor = "#e1e5e9"}
+            style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem", border: "2px solid var(--input-border)", borderRadius: "8px", fontSize: "1rem", transition: "border-color 0.2s", outline: "none", backgroundColor: "var(--input-bg)", color: "var(--text)" }}
+            onFocus={(e) => e.target.style.borderColor = "var(--accent)"}
+            onBlur={(e) => e.target.style.borderColor = "var(--input-border)"}
             aria-required="true"
           />
         </label>
@@ -109,7 +109,7 @@ export default function GitHubForm() {
         </button>
       </form>
       {output && (
-        <pre style={{ marginTop: "1rem", background: "#f0f0f0", padding: "1rem", borderRadius: "4px", overflowX: "auto" }}>
+        <pre style={{ marginTop: "1rem", background: "var(--code-bg)", color: "var(--code-text)", padding: "1rem", borderRadius: "4px", overflowX: "auto" }}>
           {output}
         </pre>
       )}
